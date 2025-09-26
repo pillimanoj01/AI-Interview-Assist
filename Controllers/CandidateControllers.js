@@ -4,4 +4,4 @@ const postInterview=(req,res)=>{
 
 }
 
-module.exports={postInterview};
+module.exports=postInterview;
