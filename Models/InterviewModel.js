@@ -1,4 +1,5 @@
 const mongoose= require("mongoose");
+const { required } = require("zod/mini");
 const objectId=mongoose.Schema.ObjectId;
 
 
@@ -14,7 +15,8 @@ const InterviewSchema = new mongoose.Schema({
     },
     interviewerId:{
         type:objectId,
-        ref:"userModel"
+        ref:"userModel",
+        required:true
     },
     interviewId:{
         type:String,

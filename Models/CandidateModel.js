@@ -1,5 +1,6 @@
 const mongoose=require("mongoose");
 const { date } = require("zod");
+const { required } = require("zod/mini");
 
 
 const candidateSchema= new mongoose.Schema({
@@ -12,8 +13,12 @@ const candidateSchema= new mongoose.Schema({
         required:true
     },
     phoneNo:{
-        type:Number,
+        type:String,
         required:true
+    },
+    interviewId:{
+        type:String,
+        required:true,
     },
     resumeURL:{
         type:String,

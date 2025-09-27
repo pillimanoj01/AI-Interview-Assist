@@ -2,10 +2,17 @@ const express=require("express");
 
 const router=express.Router();
 
-const {getAllCandidates,getCandidate}=require("../Controllers/DashboardController")
+const {createInterview,getAllInterviews,getInterview,getCandidate}=require("../Controllers/DashboardController")
 
 
-router.get("/candidate/:interviewId",getAllCandidates);
+const AuthMiddleware =require("../Middlewares/AuthMiddleware")
+
+
+router.post("/interview",AuthMiddleware,createInterview);
+
+router.get("/interviews",AuthMiddleware,getAllInterviews);
+
+router.get("/interviews/:interviewId",AuthMiddleware,getInterview);
 
 router.get("/candidate/:interviewId/:candidateId",getCandidate);
 
